@@ -256,10 +256,15 @@
         <!-- Used to set options -->
         <activity
             android:name=".preference.ContactsPreferenceActivity"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/activity_title_settings"
             android:launchMode="singleTop"
-            android:theme="@style/ContactsPreferencesTheme"/>
+            android:theme="@style/ContactsPreferencesTheme">
+            <intent-filter>
+                <action android:name="com.android.contacts.action.CONTACTS_PREFERENCE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".preference.SetDefaultAccountActivity"
